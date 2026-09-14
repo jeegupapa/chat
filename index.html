@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사내 채팅 메신저</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <header>
+          <h1>사내 메신저</h1>
+          <p>팀 대화방</p>
+        </header>
+        <div class="sidebar-actions">
+          <button id="add-room" type="button">+ 새 채팅방</button>
+        </div>
+        <nav>
+          <ul id="room-list"></ul>
+        </nav>
+        <div class="profile">
+          <label for="username">내 이름</label>
+          <input id="username" type="text" placeholder="이름을 입력하세요" />
+        </div>
+      </aside>
+
+      <main class="chat">
+        <header class="chat-header">
+          <div>
+            <h2 id="room-title">#general</h2>
+            <p id="room-subtitle">현재 방의 메시지를 확인하세요.</p>
+          </div>
+          <div class="status">
+            <span class="dot"></span>
+            연결됨
+          </div>
+        </header>
+
+        <section id="message-list" class="message-list"></section>
+
+        <form id="message-form" class="message-form">
+          <div class="input-group">
+            <input
+              id="message-input"
+              type="text"
+              placeholder="메시지를 입력하세요"
+              autocomplete="off"
+              required
+            />
+            <button type="submit">보내기</button>
+          </div>
+          <p class="hint">Shift + Enter로 줄바꿈, Enter로 전송됩니다.</p>
+        </form>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
